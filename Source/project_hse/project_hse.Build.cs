@@ -21,7 +21,12 @@ public class project_hse : ModuleRules
 			"Slate"
 		});
 
-		PrivateDependencyModuleNames.AddRange(new string[] { });
+		PrivateDependencyModuleNames.Add("NavigationSystem");
+
+		if (Target.bBuildEditor)
+		{
+			PrivateDependencyModuleNames.AddRange(new string[] { "UnrealEd", "BehaviorTreeEditor", "AIGraph", "AssetRegistry", "PCG" });
+		}
 
 		PublicIncludePaths.AddRange(new string[] {
 			"project_hse",
